@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/myApp.js"></script>
+</head>
+<body>
+    <div data-ng-app="myApp" data-ng-controller="employeeCtrl"> 
+
+        <div>
+            <input type="hidden" name="employee.EmployeeID" data-ng-model="employee.EmployeeID" value="{{employee.EmployeeId}}" />
+            Employee Name:<input type="text" name="employee.EmployeeName" data-ng-model="employee.EmployeeName" value="{{employee.EmployeeName}}"/><br />
+            Employee Address:<input type="text" name="employee.EmployeeAddress" data-ng-model="employee.EmployeeAddress" value="{{employee.EmployeeAddress}}"/><br />
+            Employee Salary:<input type="text" name="employee.EmployeeSalary" data-ng-model="employee.EmployeeSalary"  value="{{employee.EmployeeSalary}}"/><br />
+            <input type="button" value="Kaydet" name="btnSave" data-ng-click="savedata(employee)" />
+            <input type="button" value="Güncelle" name="btnUpdate" data-ng-click="updateData(employee)" />
+        </div>
+
+        <table>
+            <tr>
+                <th>Ad Soyad</th>
+                <th>Adres</th>
+                <th>Maaş</th>
+                <th>Seç</th>
+            </tr>
+            <tr data-ng-repeat="emp in employees">
+                <td>{{emp.EmployeeName}}</td>
+                <td>{{emp.EmployeeAddress}}</td>
+                <td>{{emp.EmployeeSalary}}</td>
+                <td><a href="#" data-ng-click="selectedEmployee(emp.EmployeeId)">Seç</a></td>
+                <td><a href="#" data-ng-click="DeleteData(emp.EmployeeId)">Sil</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

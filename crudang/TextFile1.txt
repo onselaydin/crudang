@@ -1,0 +1,46 @@
+﻿add new asp.net proje
+select mvc and authentication mode none
+delete home controller and view (web.config exclude)
+delete all scripts in folders
+delete  content folder all filess
+add nuget jquery install or update
+add nuget angularjs install
+add new controller from Controller folders (MVC Controller - Empty- Name is for example Employee)
+EmployeeControllers.cs right click add View (uncheck Use a layout page)
+sql server check for example dbo.tblEmployee in testdb
+
+add nuget search EntityFramework after Install
+Add new folder EF at project root folder
+EF folder right click add new class name Dal.cs (data access layer) add referance System.Data.Entity
+
+add web.config file connection string
+update code dal.cs 
+
+add model folder new class name is Employee.cs
+employee.cs models dbo.tblEmployee all fields insert get set
+
+update code dal.cs
+update index.cshtml file
+create javascript file in Scripts folder
+//Burada kadar tablea datalar listeledik.
+
+
+USE [testdb]
+GO
+
+/****** Object:  Table [dbo].[tblEmployee]    Script Date: 22.04.2016 15:51:41 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tblEmployee](
+	[EmployeeId] [int] IDENTITY(1,1) NOT NULL,
+	[EmployeeName] [nvarchar](50) NULL,
+	[EmployeeAddress] [nvarchar](50) NULL,
+	[EmployeeSalary] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
